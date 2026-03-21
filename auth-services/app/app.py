@@ -8,7 +8,7 @@ from app.config.env import EnvConfig
 
 app =  Flask(__name__)
 CORS(app)
-app.secret_key = "secret"
+app.secret_key = EnvConfig.secret_key
 
 # Registers Authorization Handlers
 app.register_blueprint(auth, url_prefix=RESOURCES.AUTH.MAIN)

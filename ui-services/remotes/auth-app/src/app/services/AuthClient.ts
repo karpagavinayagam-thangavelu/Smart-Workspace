@@ -1,6 +1,5 @@
-
 import Axios from "axios";
 
 export const AuthClient = Axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: process.env['NX_AUTH_API_URL'] || "http://localhost:3333",
 });

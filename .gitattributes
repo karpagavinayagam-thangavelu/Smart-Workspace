@@ -1,0 +1,108 @@
+# ============================================================
+# Smart Workspace - Git Attributes
+# ============================================================
+# Monorepo: NX Workspace (Module Federation) + Flask Auth API
+# ============================================================
+
+# ----------------------------
+# Line endings
+# ----------------------------
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+
+# ----------------------------
+# Generated / Build artifacts (excluded from language stats)
+# ----------------------------
+dist/*                          linguist-generated=true
+build/*                         linguist-generated=true
+pnpm-lock.yaml                  linguist-generated=true
+*.lock                          linguist-generated=true
+ui-services/pnpm-lock.yaml      linguist-generated=true
+
+# ----------------------------
+# Frontend - React + TypeScript (NX Monorepo / Module Federation)
+# ----------------------------
+# Host shell app (smart-workspace)
+ui-services/apps/**/*.tsx       linguist-detectable=true linguist-language=TSX
+ui-services/apps/**/*.ts        linguist-detectable=true linguist-language=TypeScript
+
+# Remote MFE: auth-app (Login, Register, Password Auth, AuthVerifier)
+ui-services/remotes/auth-app/**/*.tsx   linguist-detectable=true linguist-language=TSX
+ui-services/remotes/auth-app/**/*.ts    linguist-detectable=true linguist-language=TypeScript
+
+# Remote MFE: accounts-app
+ui-services/remotes/accounts-app/**/*.tsx  linguist-detectable=true linguist-language=TSX
+ui-services/remotes/accounts-app/**/*.ts   linguist-detectable=true linguist-language=TypeScript
+
+# Shared Core Library (@smart/core) - MVC pattern, Form, withMVC, TextField, Button
+ui-services/libs/core/**/*.tsx  linguist-detectable=true linguist-language=TSX
+ui-services/libs/core/**/*.ts   linguist-detectable=true linguist-language=TypeScript
+
+# Micro-services (accounts library)
+ui-services/micro-services/**/*.tsx  linguist-detectable=true linguist-language=TSX
+ui-services/micro-services/**/*.ts   linguist-detectable=true linguist-language=TypeScript
+
+# Webpack Module Federation configs
+**/module-federation.config.ts  linguist-detectable=true linguist-language=TypeScript
+**/webpack.config.ts            linguist-detectable=true linguist-language=TypeScript
+**/webpack.config.prod.ts       linguist-detectable=true linguist-language=TypeScript
+
+# ----------------------------
+# Styling - SCSS
+# ----------------------------
+*.scss  linguist-detectable=true linguist-language=SCSS
+*.css   linguist-detectable=true
+
+# ----------------------------
+# Backend - Python / Flask Auth Service
+# ----------------------------
+# Flask REST API with Pyrebase4 + Firebase Auth
+auth-services/**/*.py   linguist-detectable=true linguist-language=Python
+
+# ----------------------------
+# Infrastructure / DevOps
+# ----------------------------
+# Docker (auth-service containerised with gunicorn)
+Dockerfile              linguist-detectable=true
+**/Dockerfile           linguist-detectable=true
+
+# Firebase (Firestore rules, hosting, emulators)
+*.json                  linguist-detectable=true
+firestore.rules         linguist-detectable=true linguist-language=JavaScript
+firebase.json           linguist-detectable=true
+
+# ----------------------------
+# Testing
+# ----------------------------
+# Cypress E2E (accounts-app-e2e, smart-workspace-e2e)
+**/cypress.config.ts    linguist-detectable=true linguist-language=TypeScript
+e2e/**/*.ts             linguist-detectable=true linguist-language=TypeScript
+e2e/**/*.tsx            linguist-detectable=true linguist-language=TSX
+
+# Jest unit tests
+**/*.spec.ts            linguist-detectable=true linguist-language=TypeScript
+**/*.spec.tsx           linguist-detectable=true linguist-language=TSX
+**/*.test.py            linguist-detectable=true linguist-language=Python
+
+# ----------------------------
+# Config / Tooling
+# ----------------------------
+# NX workspace config
+nx.json                 linguist-detectable=true
+tsconfig*.json          linguist-detectable=true
+.eslintrc.json          linguist-detectable=true
+jest.config.ts          linguist-detectable=true linguist-language=TypeScript
+
+# Prettier / EditorConfig
+.prettierrc             linguist-detectable=false
+.editorconfig           linguist-detectable=false
+
+# Python deps
+requirements.txt        linguist-detectable=true linguist-language=Text
+
+# ----------------------------
+# Documentation
+# ----------------------------
+*.md    linguist-detectable=true linguist-language=Markdown
+docs/*  linguist-documentation=true

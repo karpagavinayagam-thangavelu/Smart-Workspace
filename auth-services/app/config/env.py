@@ -1,17 +1,16 @@
+import os
 
-
-class EnvConfig:    
-    host_name = '0.0.0.0',
-    port = 3333,
+class EnvConfig:
+    host_name = os.environ.get('HOST', '0.0.0.0')
+    port = int(os.environ.get('PORT', 3333))
+    secret_key = os.environ.get('SECRET_KEY', 'secret')
     firebase_config = {
-        "apiKey": "AIzaSyCyb6z-W9GVbZMV6qx7_98EmIiUapdUbdU",
-        "authDomain": "smart-workspace-e9117.firebaseapp.com",
-        "databaseURL": "https://smart-workspace-e9117-default-rtdb.asia-southeast1.firebasedatabase.app",
-        "projectId": "smart-workspace-e9117",
-        "storageBucket": "smart-workspace-e9117.appspot.com",
-        "messagingSenderId": "282330567235",
-        "appId": "1:282330567235:web:77a7eff287a07a4ce27af6",
-        "measurementId": "G-VD075NSE16"
+        "apiKey":            os.environ['FIREBASE_API_KEY'],
+        "authDomain":        os.environ['FIREBASE_AUTH_DOMAIN'],
+        "databaseURL":       os.environ['FIREBASE_DATABASE_URL'],
+        "projectId":         os.environ['FIREBASE_PROJECT_ID'],
+        "storageBucket":     os.environ['FIREBASE_STORAGE_BUCKET'],
+        "messagingSenderId": os.environ['FIREBASE_MESSAGING_SENDER_ID'],
+        "appId":             os.environ['FIREBASE_APP_ID'],
+        "measurementId":     os.environ['FIREBASE_MEASUREMENT_ID'],
     }
-    
-    
